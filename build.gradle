@@ -22,26 +22,39 @@ repositories {
 ext {
     set('snippetsDir', file("build/generated-snippets"))
     set('testcontainersVersion', "1.17.3")
+    set('springVersion', "2.7.1")
+    set('flywayVersion', "8.5.13")
+    set('mapstructVersion', "1.5.2.Final")
+    set('swaggerAnnotationsVersion', "2.2.1")
+    set('springdocVersion', "1.6.9")
+    set('lombokVersion', "1.18.24")
+    set('postgresqlVersion', "42.3.6")
+    set('springsecuritytestVersion', "5.7.2")
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.flywaydb:flyway-core'
-    implementation 'org.mapstruct:mapstruct:1.5.2.Final'
+    implementation "org.springframework.boot:spring-boot-starter-validation:$springVersion"
+    implementation "org.springframework.boot:spring-boot-starter-data-jpa:$springVersion"
+//    implementation "org.springframework.boot:spring-boot-starter-security:$springVersion"
+    implementation "org.springframework.boot:spring-boot-starter-web:$springVersion"
+    implementation "org.flywaydb:flyway-core:$flywayVersion"
+    implementation "org.mapstruct:mapstruct:$mapstructVersion"
+    implementation "io.swagger.core.v3:swagger-annotations:$swaggerAnnotationsVersion"
+    implementation "org.springdoc:springdoc-openapi-ui:$springdocVersion"
 
-    compileOnly 'org.projectlombok:lombok'
+    compileOnly "org.projectlombok:lombok:$lombokVersion"
 
-    runtimeOnly 'org.postgresql:postgresql'
+    runtimeOnly "org.postgresql:postgresql:$postgresqlVersion"
 
-    annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
-    annotationProcessor 'org.projectlombok:lombok'
-    annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.2.Final'
+    annotationProcessor "org.springframework.boot:spring-boot-configuration-processor:$springVersion"
+    annotationProcessor "org.projectlombok:lombok:$lombokVersion"
+    annotationProcessor "org.mapstruct:mapstruct-processor:$mapstructVersion"
 
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
-    testImplementation 'org.testcontainers:junit-jupiter'
-    testImplementation 'org.testcontainers:postgresql'
+    testImplementation "org.springframework.boot:spring-boot-starter-test:$springVersion"
+//    testImplementation "org.springframework.security:spring-security-test:$springsecuritytestVersion"
+    testImplementation "org.springframework.restdocs:spring-restdocs-mockmvc:$springVersion"
+    testImplementation "org.testcontainers:junit-jupiter:$testcontainersVersion"
+    testImplementation "org.testcontainers:postgresql:$testcontainersVersion"
 }
 
 dependencyManagement {
