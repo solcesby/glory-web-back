@@ -1,11 +1,11 @@
-package space.zmok.glorywebback.dto.user;
+package space.zmok.glorywebback.user.dto;
 
 import lombok.Data;
 
 import java.time.LocalDate;
 
 @Data
-public class UserUpdateDTO {
+public class UserUpdateRequest {
 
   private String username;
   private String email;

@@ -1,4 +1,4 @@
-package space.zmok.glorywebback.entity;
+package space.zmok.glorywebback.user.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
